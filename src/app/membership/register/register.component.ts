@@ -11,10 +11,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
+  memberDetails: Customer = new Customer('','','',0,0,new Date(),'','',false,[]);
     model = new Customer('Ravi','Tambade','ravi.tambade@transflower.in',9881735801,28,
                      new Date(1975,18,8),'Pune',
                      'S',
                      false,['T', 'B']);
     constructor() {  }
-
+      OnSubmit(form:any){
+        console.log(form);
+      }
 }

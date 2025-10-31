@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Item as CartItem } from '../models/Item';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -14,10 +15,15 @@ import { FormsModule } from '@angular/forms';
 export class CartComponent {
  cartItems: CartItem[] = [];
   totalPrice = 0;
+  
+ ngOnInit() {
+    this.loadCart();
+ }
+  constructor(private cart:CartService) {}
 
-  constructor() {}
-
-  loadCart() {}
+  loadCart() {
+    this.cartItems = this.cart.getCartItems();
+  }
 
   removeItem(id: number) { }
 

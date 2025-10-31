@@ -14,12 +14,12 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let item of cartItems">
             <td class="text-center">
-              <img src="/assets/images/rose.jpg" width="60" height="60" class="rounded">
+              <img src="/assets/images/{{item.imageUrl}}" width="60" height="60" class="rounded">
             </td>
-            <td>rose</td>
-            <td class="text-end">₹ 15</td>
+            <td>{{item.title}}</td>
+            <td class="text-end">{{item.price | currency:'INR'}}</td>
             <td class="text-center">
               <input type="number" class="form-control text-center mx-auto"
                      style="width: 80px;"
@@ -33,24 +33,7 @@
             </td>
           </tr>
 
-           <tr>
-            <td class="text-center">
-              <img src="/assets/images/lotus.jpg" width="60" height="60" class="rounded">
-            </td>
-            <td>lotus</td>
-            <td class="text-end">₹ 30</td>
-            <td class="text-center">
-              <input type="number" class="form-control text-center mx-auto"
-                     style="width: 80px;"
-                     min="1" value="4"/>
-            </td>
-            <td class="text-end">₹120</td>
-            <td class="text-center">
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="bi bi-trash"></i> Remove
-              </button>
-            </td>
-          </tr>
+          
         </tbody>
       </table>
     </div>

@@ -21,5 +21,8 @@ export class SignInComponent {
  
   constructor(private svc:AuthService) {    }  //DI
 
- 
+ onSubmit(form:any){
+  console.log(form);
+   this.isValidUser = this.svc.validate(form.userEmail,form.userPassword);
+ }
 }
