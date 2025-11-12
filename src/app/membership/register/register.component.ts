@@ -17,6 +17,7 @@ export class RegisterComponent {
                      'S',
                      false,['T', 'B']);
     constructor() {  }
+    
       OnSubmit(form:any){
         console.log(form);
       }

@@ -3,6 +3,7 @@
 <p>{{product.description}}</p>
 <img src="{{product.imageurl}}" width="200" height="200"/>
 <p>Likes: {{product.likes}}</p>
+<p>Price: {{product.price | currency}}</p>
 <app-counter [count]="product.likes"  (update)="onUpdate($event)">
 </app-counter>
 </div>

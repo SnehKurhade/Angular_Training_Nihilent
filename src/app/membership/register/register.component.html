@@ -1,35 +1,49 @@
-<form>
+<form #registerForm="ngForm" (ngSubmit)="OnSubmit(registerForm.value)" novalidate> 
             <table>
             <tr>
                 <td><label>FirstName:</label></td>
-                <input type="text" name="firstName" required minlength="3" maxlength="8" >
+                <input type="text" name="firstName" required minlength="3" maxlength="8" 
+                #firstname="ngModel" [(ngModel)]="memberDetails.firstName"
+                >
               
             </tr>
                 
             <tr>
                 <td><label>LastName:</label></td>
-                <td><input type="text" name="lastName" ></td>
+                <td><input type="text" name="lastName" 
+                    #lastName="ngModel" [(ngModel)]="memberDetails.lastName">
+                </td>
             </tr>
             <tr><td>
                   <label>Email:</label></td>
-                  <input type="email" name="email"  required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                  <input type="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$"
+                  #email="ngModel" [(ngModel)]="memberDetails.email"
+                  >
 
             </tr>
             <tr>
                 <td> <label>BirthDate:</label></td>
-                <td><input type="date" name="birthDate"  required ></td>
+                <td><input type="date" name="birthDate"  required 
+                #birthDate="ngModel" [(ngModel)]="memberDetails.birthDate"
+                    >
+                </td>
             </tr>
             <tr>
                 <td> <label>Age:</label></td>
-                <td><input type="number" name="age"  required ></td>
+                <td><input type="number" name="age"  required 
+                    #age="ngModel" [(ngModel)]="memberDetails.age"
+                    ></td>
             </tr>
             <tr>
                 <td><label>PhoneNo:</label></td>
-                <td><input type="text" name="phoneNo"  required ></td>
+                <td><input type="text" name="phoneNo"  required 
+                    #phoneNo="ngModel" [(ngModel)]="memberDetails.phoneNo"
+                    ></td>
             </tr> 
              <tr>
                 <td><label>Location:</label></td>
-                <select id="location" required  name="location"> 
+                <select id="location" required  name="location" #location="ngModel"
+                [(ngModel)]="memberDetails.location"> 
                    <option>Pune</option>
                    <option>Mumbai</option>
                    <option>Bangalore</option>
@@ -39,7 +53,7 @@
             <tr>
                 <td><label>Membership:</label></td>
                 <div>
-                    <label><input type="radio" name="memberShip"  required   > gold </label>
+                    <label><input type="radio" name="memberShip"  required > gold </label>
                 </div>
                 <div>
                     <label><input type="radio" name="memberShip"  required   > silver </label>
@@ -50,7 +64,8 @@
             </tr>
             <tr>
                 <td><label>Status</label></td>
-                <input type="checkbox" name="IsRegistered" value='false'>IsRegistered<br>
+                <input type="checkbox" name="IsRegistered" value='false' [(ngModel)]="memberDetails.isRegistered">
+                <br>
             </tr>
             <tr>
                 <td><label>Source Of Information:</label></td>

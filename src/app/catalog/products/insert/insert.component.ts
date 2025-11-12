@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { CounterComponent } from '../counter/counter.component';
 
 @Component({
   selector: 'app-insert',
-  standalone: true,
-  imports: [FormsModule,CounterComponent],
   templateUrl: './insert.component.html',
   styleUrl: './insert.component.css'
 })
